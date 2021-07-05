@@ -2,6 +2,7 @@ import React from "react";
 // import KegControl from "./KegControl";
 
 import Header from "./Header";
+import KegControl from "./KegControl";
 
 function App(){
   return (
@@ -11,7 +12,7 @@ function App(){
         <div className="content">input new keg</div>
         <div className="footer">
           <h3>input form</h3>
-          {/* <KegControl /> */}
+          <KegControl />
         </div>
       </div>
     </React.Fragment>
