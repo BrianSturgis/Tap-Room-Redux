@@ -1,8 +1,12 @@
 import React from "react";
+import logoImage from "./../img/logoImage.png";
 
 function Header(){
   return (
-    <h1>Tap Room</h1>
+		<React.Fragment>
+		<img src={logoImage} alt="business id" />
+    
+		</React.Fragment>
   );
 }
 
