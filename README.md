@@ -40,6 +40,9 @@ A user can click a button next to a keg whenever I sell a pint of it. This will 
 - Adobe Photo Shop
 - Adobe XD
   
+### using the application
+app must be run from its fundamentals branch
+
 ### `npm install`
 This app uses node.js. If you do not already have node.js installed, visit https://nodejs.org/en/download/ and install.
 After installing node..
