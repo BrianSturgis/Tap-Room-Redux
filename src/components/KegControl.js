@@ -4,7 +4,6 @@ import KegList from './KegList';
 import KegDetail from './KegDetail';
 import EditKegForm from './EditKegForm';
 
-
 class KegControl extends React.Component {
 
   constructor(props) {
@@ -31,6 +30,7 @@ handleClick = () => {
     }));
   }
 }
+
 handleAddingNewKegToList = (newKeg) => {
   const newMasterKegList = this.state.masterKegList.concat(newKeg);
   this.setState({
@@ -43,7 +43,6 @@ handleChangingSelectedKeg = (id) => {
   const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id)[0];
   this.setState({selectedKeg: selectedKeg});
 }
-
 
 handleEditClick = () => {
   this.setState({editing: true});
@@ -59,6 +58,7 @@ handleEditingKegInList = (kegToEdit) => {
     selectedKeg: kegToEdit
   });
 }
+
 handleBuyClick = () => {
   const selectedKeg = this.state.selectedKeg;
   const pintToBuy = Object.assign({}, selectedKeg, {pintsLeft: selectedKeg.pintsLeft - 1});
@@ -91,7 +91,6 @@ handleDeletingKeg = (id) => {
   });
 }
 
-
 render(){
   let currentlyVisibleState = null;
   let buttonText = null;
@@ -123,9 +122,6 @@ render(){
       <button onClick={this.handleClick}>{buttonText}</button>
     </React.Fragment>
   );
+	}
 }
-}
-
 export default KegControl;
-
-

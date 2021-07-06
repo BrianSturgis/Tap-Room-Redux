@@ -30,5 +30,4 @@ KegDetail.propTypes = {
   onClickingBuy: PropTypes.func,
   onClickingRestock: PropTypes.func
 };
-
 export default KegDetail;

@@ -24,5 +24,4 @@ KegList.propTypes = {
   kegList: PropTypes.array,
   onKegSelection: PropTypes.func
 };
-
 export default KegList;

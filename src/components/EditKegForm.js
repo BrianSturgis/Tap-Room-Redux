@@ -31,5 +31,4 @@ EditKegForm.propTypes = {
   onEditKeg: PropTypes.func
 
 };
-
 export default EditKegForm;
