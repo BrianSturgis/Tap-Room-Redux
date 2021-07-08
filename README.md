@@ -14,7 +14,7 @@ A user can click a button next to a keg whenever I sell a pint of it. This will 
 
 ### Known Bugs
 - keg refill button does not top off keg it adds 124 pints and is not the expectation of the function.
-- css styling is set up for layout currently to show rows and columns and not meant for look
+- css styling (tap room logo, etc) is in build state and barely a wire frame.
 - all fields requiring integers must receive them or the keg must be re updated completely for the math to properly reduce the keg amount by one pint at a time.
 
 ## Component Diagram
