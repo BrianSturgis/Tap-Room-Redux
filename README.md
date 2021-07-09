@@ -38,7 +38,6 @@ A user can click a button next to a keg whenever I sell a pint of it. This will 
 - node.js v15.8.0
 - Bootstrap v5.0.0
 - Adobe Photo Shop
-- Adobe XD
   
 ### using the application
 app must be run from its fundamentals branch
