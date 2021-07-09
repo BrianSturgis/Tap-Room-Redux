@@ -1,6 +1,6 @@
-# Keg Tracker
+# Keg Tracker 
 <p align="center"> Authored by Brian Sturgis</p>
-<p align="center">Project started on April 23rd, 2021</p>
+<p align="center">Project started on July 2nd, 2021</p>
 
 ## Description
 This is an application for a Bar to track their keg inventory.
