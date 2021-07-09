@@ -9,9 +9,7 @@ function App(){
     <React.Fragment>
           <Header />
       <div className="container">
-        <div className="content">input new keg</div>
         <div className="footer">
-          <h3>input form</h3>
           <KegControl />
         </div>
       </div>
