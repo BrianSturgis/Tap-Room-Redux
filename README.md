@@ -3,7 +3,7 @@
 <p align="center">Project started on July 2nd, 2021</p>
 
 ## Description
-This is an application for a Bar to track their keg inventory.
+This is an application for a Bar to track their keg inventory and more specifically   dw.
 
 ## user stories
 As a user can see a list/menu of all available kegs. They can see its name, brand, price and alcoholContent.
