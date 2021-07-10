@@ -13,8 +13,8 @@ A user can see how many pints are left in a keg. Hint: A full keg has roughly 12
 A user can click a button next to a keg whenever I sell a pint of it. This will decrease the number of pints left by 1. 
 
 ### Known Bugs
+- The application was pushed with one of its components named incorrectly do to the first letters case.  It took many test commits to figure out that git hub does not recognize  cases don't register when pushing to GitHub. Early commits reflect that files had to be manually change in the repo itself.
 - keg refill button does not top off keg it adds 124 pints and is not the expectation of the function.
-- css styling (tap room logo, etc) is in build state and barely a wire frame.
 - all fields requiring integers must receive them or the keg must be re updated completely for the math to properly reduce the keg amount by one pint at a time.
 
 ## Component Diagram
@@ -40,7 +40,6 @@ A user can click a button next to a keg whenever I sell a pint of it. This will 
 - Adobe Photo Shop
   
 ### using the application
-app must be run from its fundamentals branch
 
 ### `npm install`
 This app uses node.js. If you do not already have node.js installed, visit https://nodejs.org/en/download/ and install.
