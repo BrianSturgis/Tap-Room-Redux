@@ -1,9 +1,9 @@
 import kegListReducer from '../../reducers/keg-list-reducer';
 import * as c from '../../actions/ActionTypes';
 
-
 describe('keg list reducer', () => {
-	let action;
+
+  let action;
   const currentState ={
     1 : {
       names: 'henry whine herds',
@@ -22,11 +22,13 @@ describe('keg list reducer', () => {
     }
   };
 
-test('Should return default state if there is no action type passed into the reducer', () => {
+
+  test('Should return default state if there is no action type passed into the reducer', () => {
     expect(kegListReducer({}, { type: null })).toEqual({});
   });
 
-	test('Should successfully add new keg data to masterKegList', () => {
+
+  test('Should successfully add new keg data to masterKegList', () => {
       const { names, brand, price, alcoholContent, pintsLeft, id } = currentState;
       action = {
         type: c.ADD_KEG,
@@ -50,4 +52,22 @@ test('Should return default state if there is no action type passed into the red
     });
   });
 
+  test('Should successfully delete a keg', () => {
+    action = {
+      type: c.DELETE_KEG,
+      id: 1
+    };
+    expect(kegListReducer(currentState, action)).toEqual({
+      2: {
+        names: 'rubinator',
+        brand: 'edgefiled',
+        price: 225,
+        alcoholContent: 9.0,
+        pintsLeft: 100,
+        id: 2,
+      }
+    });
+  });
 });
+
+
