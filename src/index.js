@@ -11,6 +11,10 @@ import reducer from './reducers/keg-list-reducer';
 
 const store = createStore(reducer);
 
+store.subscribe(() =>
+  console.log(store.getState())
+);
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
