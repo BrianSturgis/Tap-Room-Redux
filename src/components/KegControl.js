@@ -32,7 +32,7 @@ handleClick = () => {
     }
   }
 
-
+// create
 handleAddingNewKegToList = (newKeg) => {
     const { dispatch } = this.props;
     const action = a.addKeg(newKeg);
@@ -41,38 +41,47 @@ handleAddingNewKegToList = (newKeg) => {
     dispatch(action2);
   }
 
-
+// read-details
 handleChangingSelectedKeg = (id) => {
-  const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id)[0];
-  this.setState({selectedKeg: selectedKeg});
-}
+    const selectedKeg = this.props.masterKegList[id];
+    this.setState({selectedKeg: selectedKeg});
+  }
 
+// update
 handleEditClick = () => {
   this.setState({editing: true});
 }
 
-handleEditingKegInList = (kegToEdit) => {
-  const editedMasterKegList = this.state.masterKegList
-    .filter(keg => keg.id !== this.state.selectedKeg.id)
-    .concat(kegToEdit);
-  this.setState({
-    masterKegList: editedMasterKegList,
-    editing: false,
-    selectedKeg: kegToEdit
-  });
-}
+handleEditingKegInList = (ticketToEdit) => {
+    const { dispatch } = this.props;
+    const action = a.addTicket(ticketToEdit);
+    dispatch(action);
+    this.setState({
+      editing: false,
+      selectedKeg: null
+    });
+  }
 
-handleBuyClick = () => {
-  const selectedKeg = this.state.selectedKeg;
-  const pintToBuy = Object.assign({}, selectedKeg, {pintsLeft: selectedKeg.pintsLeft - 1});
-  const editedMasterKegList = this.state.masterKegList
-    .filter(keg => keg.id !== this.state.selectedKeg.id)
-    .concat(pintToBuy);
-  this.setState({
-    masterKegList: editedMasterKegList,
-    selectedKeg: pintToBuy
-  });
-}
+//Reduce Keg Inventory
+  handleBuyClick = () => {
+    const { dispatch } = this.props;
+    const { pintsLeft, id } = pintToBuy;
+    const selectedKeg = this.props.selectedKeg;
+    // const pintToBuy = Object.assign({}, selectedKeg, {pintsLeft: selectedKeg.pintsLeft - 1});
+    const action = {
+      type: 'BUY_PINT',
+      pintsLeft: selectedKeg.pintsLeft - 1,
+      id
+    }
+    // const editedMasterKegList = this.state.masterKegList
+    //   .filter(keg => keg.id !== this.state.selectedKeg.id)
+    //   .concat(pintToBuy);
+    dispatch(action);
+    this.setState({
+      // masterKegList: editedMasterKegList,
+      selectedKeg: pintToBuy
+    });
+  }
 
 handleRestockClick = () => {
   const selectedKeg = this.state.selectedKeg;
