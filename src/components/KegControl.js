@@ -5,40 +5,42 @@ import KegDetail from './KegDetail';
 import EditKegForm from './EditKegForm';
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
+import * as a from './../actions';
 
 class KegControl extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: false,
       createNewKeg: false,
       selectedKeg: null,
       editing: false
     };
   }
 
+// read
 handleClick = () => {
   if (this.state.selectedKeg != null) {
     this.setState({
-      formVisibleOnPage: false,
       selectedKeg: null,
       editing: false
     });
   } else {
-    this.setState(prevState => ({
-      formVisibleOnPage: !prevState.formVisibleOnPage,
-    }));
+    const { dispatch } = this.props;
+    const action = a.toggleForm();
+    dispatch(action);   
+    }
   }
-}
+
 
 handleAddingNewKegToList = (newKeg) => {
-  const newMasterKegList = this.state.masterKegList.concat(newKeg);
-  this.setState({
-    masterKegList: newMasterKegList,
-    formVisibleOnPage: false
-  });
-}
+    const { dispatch } = this.props;
+    const action = a.addKeg(newKeg);
+    dispatch(action);
+    const action2 = a.toggleForm();
+    dispatch(action2);
+  }
+
 
 handleChangingSelectedKeg = (id) => {
   const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id)[0];
