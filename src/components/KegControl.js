@@ -3,6 +3,7 @@ import NewKegForm from './NewKegForm';
 import KegList from './KegList';
 import KegDetail from './KegDetail';
 import EditKegForm from './EditKegForm';
+import { connect } from 'react-redux';
 
 class KegControl extends React.Component {
 
@@ -11,7 +12,6 @@ class KegControl extends React.Component {
     this.state = {
       formVisibleOnPage: false,
       createNewKeg: false,
-      masterKegList: [],
       selectedKeg: null,
       editing: false
     };
@@ -124,4 +124,6 @@ render(){
   );
 	}
 }
+KegControl = connect()(KegControl);
+
 export default KegControl;
