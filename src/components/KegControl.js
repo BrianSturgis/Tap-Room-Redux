@@ -5,7 +5,7 @@ import NewKegForm from "./NewKegForm";
 import EditKegForm from "./EditKegForm";
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
-import * as a from '../actions/Index';
+import * as a from '../actions/index';
 
 class KegControl extends React.Component {
 
